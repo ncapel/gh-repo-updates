@@ -1,0 +1,9 @@
+{
+    "version": 2,
+    "routes": [
+        {
+            "src": "/github",
+            "dest": "/api/github.js"
+        }
+    ]
+}
