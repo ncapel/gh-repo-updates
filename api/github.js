@@ -20,7 +20,7 @@ export default async function handler(req, res) {
         ],
     };
 
-    const DISCORD_WEBHOOK_URL = process.env.DISCORD_WEBHOOK_URL;
+    let DISCORD_WEBHOOK_URL = process.env.DISCORD_WEBHOOK_URL;
     if (repository.name === "units-6-7-react-chat-bit-by-bit") {
         DISCORD_WEBHOOK_URL += `?thread_id=${process.env.TEAM_B}`
     } else if (repository.name === "units-6-7-react-chat-gryffindor") {
