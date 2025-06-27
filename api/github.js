@@ -42,12 +42,16 @@ export default async function handler(req, res) {
 		DISCORD_WEBHOOK_URL += `?thread_id=${process.env.TEAM_B}`;
 	}
 
+	const branch = req.body.ref.split('/');
+
 	const payload = {
 		username: 'GitHub Bot',
 		embeds: [
 			{
 				title: `📦 New push to ${repository.name}`,
-				description: `**${pusher.name}** pushed to \`${repository.default_branch}\`:\n\n${commitMessages}`,
+				description: `**${pusher.name}** pushed to \`${
+					branch[branch.length - 1]
+				}\`:\n\n${commitMessages}`,
 				color: 0x5865f2,
 			},
 		],
